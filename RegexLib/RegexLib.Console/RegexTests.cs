@@ -137,6 +137,16 @@ namespace RegexLib.Console
             ExecTest(context, rep);
         }
 
+        public static void test_greedy()
+        {
+            var context = new Context("aaaaa");
+            var chara = new Character('a');
+            var grd = new Greedy(chara, 2, 4);
+
+            // (a{1,3})
+            ExecTest(context, grd);
+        }
+
         #endregion
     }
 }

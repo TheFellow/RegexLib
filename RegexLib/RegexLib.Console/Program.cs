@@ -21,7 +21,8 @@ namespace RegexLib.Console
             //test_list_backward();
             //test_alternate();
             //test_alternatelist();
-            test_repeat();
+            //test_repeat();
+            test_greedy();
 
             ReadKey(true);
         }
