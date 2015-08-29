@@ -16,7 +16,9 @@ namespace RegexLib.Console
             WriteLine("RegexLib.Console test app.");
 
             //test_empty();
-            test_char();
+            //test_char();
+            //test_list();
+            test_list_backward();
 
             ReadKey(true);
         }

@@ -43,6 +43,8 @@
     <Compile Include="Context.cs" />
     <Compile Include="Core\Character.cs" />
     <Compile Include="Core\Empty.cs" />
+    <Compile Include="Core\List.cs" />
+    <Compile Include="Core\MatchManyBase.cs" />
     <Compile Include="IMatch.cs" />
     <Compile Include="Regex.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
