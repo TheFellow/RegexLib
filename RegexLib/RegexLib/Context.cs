@@ -27,6 +27,7 @@ namespace RegexLib
 
         public int Length => matchString.Length;
         public char curr => (offset >= 0 && offset < matchString.Length) ? matchString[offset] : '\0';
+        public char prev => (offset > 0 && offset <= matchString.Length) ? matchString[offset - 1] : '\0';
 
         #endregion
 

@@ -57,6 +57,25 @@ namespace RegexLib.Console
             ExecTest(context, empty);
         }
 
+        public static void test_char()
+        {
+            var context = new Context("ab");
+            var chara = new Character('a');
+            var charb = new Character('b');
+
+            ExecTest(context, chara);
+
+            context.offset = 1;
+            ExecTest(context, charb);
+
+            chara = new Character('a', false);
+            ExecTest(context, chara);
+
+            context.offset = 2;
+            charb = new Character('b', false);
+            ExecTest(context, charb);
+        }
+
         #endregion
     }
 }

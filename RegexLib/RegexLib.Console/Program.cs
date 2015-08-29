@@ -15,7 +15,8 @@ namespace RegexLib.Console
         {
             WriteLine("RegexLib.Console test app.");
 
-            test_empty();
+            //test_empty();
+            test_char();
 
             ReadKey(true);
         }
