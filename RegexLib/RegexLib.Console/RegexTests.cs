@@ -10,7 +10,7 @@ using static System.Console;
 
 namespace RegexLib.Console
 {
-    static class RegexTests
+    static class CoreTests
     {
         static void WriteError(string errorString)
         {
@@ -84,6 +84,7 @@ namespace RegexLib.Console
             var charc = new Character('c');
             var list = new List(new IMatch[] { chara, charb, charc });
 
+            // (abc)
             ExecTest(context, list);
         }
 
@@ -107,6 +108,7 @@ namespace RegexLib.Console
             var list3a = new List(new IMatch[] { chara, chara, chara });
             var alt = new Alternate(new IMatch[] { chara, list2a, list3a });
 
+            // (a|aa|aaa)
             ExecTest(context, alt);
         }
 
@@ -119,7 +121,20 @@ namespace RegexLib.Console
             var alt = new Alternate(new IMatch[] { chara, list2a, list3a });
             var list = new List(new IMatch[] { alt, alt });
 
+            // (a|aa|aaa)(a|aa|aaa)
             ExecTest(context, list);
+        }
+
+        public static void test_repeat()
+        {
+            var context = new Context("aaaa");
+            var chara = new Character('a');
+            var list2a = new List(new IMatch[] { chara, chara });
+            var alt = new Alternate(new IMatch[] { chara, list2a });
+            var rep = new Repeat(alt, 2);
+
+            // (a|aa){2}
+            ExecTest(context, rep);
         }
 
         #endregion
