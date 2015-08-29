@@ -29,5 +29,17 @@ namespace RegexLib
         public char curr => (offset >= 0 && offset < matchString.Length) ? matchString[offset] : '\0';
 
         #endregion
+
+        #region Use ToString() to dump the current state of the matching context
+
+        public override string ToString()
+        {
+            // Display the match string and a pointer to the current offset
+            string str = $"{matchString}\n{new string('-', offset)}^";
+
+            return str;
+        }
+
+        #endregion
     }
 }
