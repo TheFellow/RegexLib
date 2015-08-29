@@ -18,7 +18,9 @@ namespace RegexLib.Console
             //test_empty();
             //test_char();
             //test_list();
-            test_list_backward();
+            //test_list_backward();
+            //test_alternate();
+            test_alternatelist();
 
             ReadKey(true);
         }

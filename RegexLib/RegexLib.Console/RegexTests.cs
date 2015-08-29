@@ -99,6 +99,29 @@ namespace RegexLib.Console
             ExecTest(context, list);
         }
 
+        public static void test_alternate()
+        {
+            var context = new Context("aaa");
+            var chara = new Character('a');
+            var list2a = new List(new IMatch[] { chara, chara });
+            var list3a = new List(new IMatch[] { chara, chara, chara });
+            var alt = new Alternate(new IMatch[] { chara, list2a, list3a });
+
+            ExecTest(context, alt);
+        }
+
+        public static void test_alternatelist()
+        {
+            var context = new Context("aaaa");
+            var chara = new Character('a');
+            var list2a = new List(new IMatch[] { chara, chara });
+            var list3a = new List(new IMatch[] { chara, chara, chara });
+            var alt = new Alternate(new IMatch[] { chara, list2a, list3a });
+            var list = new List(new IMatch[] { alt, alt });
+
+            ExecTest(context, list);
+        }
+
         #endregion
     }
 }

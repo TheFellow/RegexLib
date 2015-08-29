@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RegexLib
 {
-    class Context
+    sealed class Context
     {
         /// <summary>
         /// The string we're attempting to match
@@ -31,12 +31,30 @@ namespace RegexLib
 
         #endregion
 
+        #region Stack for storing state information
+
+        private readonly Stack<int> stack = new Stack<int>();
+
+        public void Push(int state) => stack.Push(state);
+        public int Peek() => stack.Peek();
+        public int Pop() => stack.Pop();
+
+        #endregion
+
         #region Use ToString() to dump the current state of the matching context
 
         public override string ToString()
         {
             // Display the match string and a pointer to the current offset
-            string str = $"{matchString}\n{new string('-', offset)}^";
+            string str = $"{matchString}\n{new string('-', offset)}^\n";
+
+            // If the stack is non-empty display it
+            if(stack.Count > 0)
+            {
+                int[] stackState = stack.ToArray();
+                Array.Reverse(stackState);
+                str += "  Stack: " + string.Join(", ", stackState);
+            }
 
             return str;
         }
