@@ -50,6 +50,7 @@ namespace RegexLib
         // restore the state of the context by tracking the
         // largest key
         private int key = 0;
+        public int Key => key; // Used to save the state
 
         public int Push(int beg, int end, int groupId)
         {
