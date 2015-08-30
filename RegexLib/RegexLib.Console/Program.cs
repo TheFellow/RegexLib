@@ -22,7 +22,8 @@ namespace RegexLib.Console
             //test_alternate();
             //test_alternatelist();
             //test_repeat();
-            test_greedy();
+            //test_greedy();
+            test_lazy();
 
             ReadKey(true);
         }

@@ -45,6 +45,7 @@
     <Compile Include="Core\Character.cs" />
     <Compile Include="Core\Empty.cs" />
     <Compile Include="Core\Greedy.cs" />
+    <Compile Include="Core\Lazy.cs" />
     <Compile Include="Core\List.cs" />
     <Compile Include="Core\MatchManyBase.cs" />
     <Compile Include="Core\MatchSingleBase.cs" />

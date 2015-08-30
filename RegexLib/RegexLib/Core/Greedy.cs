@@ -36,8 +36,8 @@ namespace RegexLib.Core
             // backtrack into the required iterations
             if (index == 0)
             {
-                // We failed to find another match at the minimum level
-                // so we must fail here
+                // If we failed to find another match at the
+                // minimum level we must fail here
                 if (!base.MatchNext(context))
                     return false;
 
@@ -45,25 +45,27 @@ namespace RegexLib.Core
                 // greedily again from 0
                 return MatchGreedily(context, 0);
             }
-
-            // We've made a match optionally, so see if it has an alternative
-            if (matchItem.MatchNext(context))
+            else
             {
-                // If the most recent iteration of the token found an alternative
-                // then we've succeeded here. Save the state and return.
-                context.Push(index);
+                // We've made a match optionally, so see if it has an alternative
+                if (matchItem.MatchNext(context))
+                {
+                    // If the most recent iteration of the token found an alternative
+                    // then we've succeeded, so match forward from here.
+                    return MatchGreedily(context, index);
+                }
+
+                // We've failed to match alternatively for the most recent Match
+                // of our token, but these were optional, so decrement the
+                // count of our matches, save the state, and exit
+                context.Push(--index);
                 return true;
             }
-
-            // We've failed to match alternatively for the most revent Match
-            // of our token, but these were optional, so decrement the
-            // count of our matches, save the state, and exir
-            context.Push(--index);
-            return true;
         }
 
         private bool MatchGreedily(Context context, int index)
         {
+            // Iterate while we haven't reached our maximum and can still Match
             while (index < max && matchItem.Match(context))
                 index++;
 

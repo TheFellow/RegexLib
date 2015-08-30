@@ -147,6 +147,16 @@ namespace RegexLib.Console
             ExecTest(context, grd);
         }
 
+        public static void test_lazy()
+        {
+            var context = new Context("aaaaa");
+            var chara = new Character('a');
+            var lazy = new Lazy(chara, 2, 4);
+
+            // (a{2,4}?)
+            ExecTest(context, lazy);
+        }
+
         #endregion
     }
 }
