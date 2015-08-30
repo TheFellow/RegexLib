@@ -26,7 +26,8 @@ namespace RegexLib.Console
             //test_lazy();
             //test_greedyalternate();
             //test_lazyalternate();
-            test_greedyaltcapture();
+            //test_greedyaltcapture();
+            test_assertion();
 
             ReadKey(true);
         }

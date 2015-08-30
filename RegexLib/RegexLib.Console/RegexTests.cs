@@ -47,6 +47,9 @@ namespace RegexLib.Console
                 WriteError("Match failed.");
                 WriteLine(context);
             }
+
+            if (context.offset != 0)
+                WriteError("Warning: Context offset not reset to 0.");
         }
 
         #region Test Methods
@@ -196,6 +199,19 @@ namespace RegexLib.Console
 
             // ((a)|(aa)){1,2}
             ExecTest(context, greedy);
+        }
+
+        public static void test_assertion()
+        {
+            var context = new Context("aaaa");
+            var chara = new Character('a');
+            var greedy = new Greedy(chara, 1);
+            var list2a = new List(new IMatch[] { chara, chara });
+            var assert = new Assert(new CaptureGroup(list2a, 1));
+            var list = new List(new IMatch[] { greedy, assert });
+
+            // (a+(?=(aa))
+            ExecTest(context, list);
         }
 
         #endregion

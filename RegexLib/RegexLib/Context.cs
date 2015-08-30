@@ -39,6 +39,14 @@ namespace RegexLib
         public int Peek() => stack.Peek();
         public int Pop() => stack.Pop();
 
+        public int stackSize => stack.Count;
+
+        public void RestoreStack(int length)
+        {
+            while (stack.Count > 0 && stack.Count > length)
+                stack.Pop();
+        }
+
         #endregion
 
         #region Sorted dictionary of capture info stacks
@@ -77,6 +85,15 @@ namespace RegexLib
 
             var ci = Peek(groupId);
             return matchString.Substring(ci.low, ci.high - ci.low);
+        }
+
+        public void RestoreCaptures(int maxKey)
+        {
+            foreach(int groupId in capture.Keys)
+            {
+                if (GroupHasValue(groupId) && Peek(groupId).key > maxKey)
+                    Pop(groupId);
+            }
         }
 
         #endregion
