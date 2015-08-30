@@ -30,7 +30,8 @@ namespace RegexLib.Console
             //test_assertion();
             //test_negative_lookahead();
             //test_positive_lookbehind();
-            test_negative_lookbehind();
+            //test_negative_lookbehind();
+            test_atomic();
 
             ReadKey(true);
         }

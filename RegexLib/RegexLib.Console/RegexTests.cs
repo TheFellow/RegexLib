@@ -261,6 +261,20 @@ namespace RegexLib.Console
             ExecTest(context, list);
         }
 
+        public static void test_atomic()
+        {
+            var context = new Context("aaaab");
+            var chara = new Character('a');
+            var charb = new Character('b');
+            var greedya = new Greedy(chara, 2);
+            var atomic = new Atomic(greedya);
+            var alt = new Alternate(new IMatch[] { chara, charb });
+            var list = new List(new IMatch[] { new CaptureGroup(atomic, 1), alt });
+
+            // (((?>a{2,}))(?:a|b))
+            ExecTest(context, list);
+        }
+
         #endregion
     }
 }
