@@ -157,6 +157,30 @@ namespace RegexLib.Console
             ExecTest(context, lazy);
         }
 
+        public static void test_greedyalternate()
+        {
+            var context = new Context("aaaaa");
+            var chara = new Character('a');
+            var list2a = new List(new IMatch[] { chara, chara });
+            var alt = new Alternate(new IMatch[] { chara, list2a });
+            var greedy = new Greedy(alt, 1, 2);
+
+            // (a|aa){1,2}
+            ExecTest(context, greedy);
+        }
+
+        public static void test_lazyalternate()
+        {
+            var context = new Context("aaaaa");
+            var chara = new Character('a');
+            var list2a = new List(new IMatch[] { chara, chara });
+            var alt = new Alternate(new IMatch[] { chara, list2a });
+            var lazy = new Lazy(alt, 1, 2);
+
+            // (a|aa){1,2}?
+            ExecTest(context, lazy);
+        }
+
         #endregion
     }
 }

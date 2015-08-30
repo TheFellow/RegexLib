@@ -23,7 +23,9 @@ namespace RegexLib.Console
             //test_alternatelist();
             //test_repeat();
             //test_greedy();
-            test_lazy();
+            //test_lazy();
+            //test_greedyalternate();
+            test_lazyalternate();
 
             ReadKey(true);
         }
