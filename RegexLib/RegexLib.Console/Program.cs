@@ -27,7 +27,10 @@ namespace RegexLib.Console
             //test_greedyalternate();
             //test_lazyalternate();
             //test_greedyaltcapture();
-            test_assertion();
+            //test_assertion();
+            //test_negative_lookahead();
+            //test_positive_lookbehind();
+            test_negative_lookbehind();
 
             ReadKey(true);
         }

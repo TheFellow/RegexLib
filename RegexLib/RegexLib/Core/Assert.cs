@@ -8,7 +8,13 @@ namespace RegexLib.Core
 {
     class Assert : MatchSingleBase
     {
-        public Assert(IMatch matchItem) : base(matchItem) { }
+        public readonly bool positive;
+
+        public Assert(IMatch matchItem, bool positive = true)
+            : base(matchItem)
+        {
+            this.positive = positive;
+        }
 
         public override bool Match(Context context)
         {
@@ -25,6 +31,10 @@ namespace RegexLib.Core
 
             // Try to match the token
             bool result = matchItem.Match(context);
+
+            // Negative assertions return the oposite of the actual token result
+            if (!positive)
+                result = !result;
 
             // Reset the offset and remove any
             // backtracking info for the token

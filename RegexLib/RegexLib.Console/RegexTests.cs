@@ -201,7 +201,7 @@ namespace RegexLib.Console
             ExecTest(context, greedy);
         }
 
-        public static void test_assertion()
+        public static void test_positive_lookahead()
         {
             var context = new Context("aaaa");
             var chara = new Character('a');
@@ -211,6 +211,53 @@ namespace RegexLib.Console
             var list = new List(new IMatch[] { greedy, assert });
 
             // (a+(?=(aa))
+            ExecTest(context, list);
+        }
+
+        public static void test_negative_lookahead()
+        {
+            var context = new Context("aaaab");
+            var chara = new Character('a');
+            var greedy = new Greedy(chara, 1);
+            var list2a = new List(new IMatch[] { chara, chara });
+            var assert = new Assert(new CaptureGroup(list2a, 1), false);
+            var list = new List(new IMatch[] { greedy, assert });
+
+            // (a+(?!(aa))
+            ExecTest(context, list);
+        }
+
+        public static void test_positive_lookbehind()
+        {
+            var context = new Context("abaab");
+            var chara = new Character('a');
+            var charb = new Character('b');
+            var alt = new Alternate(new IMatch[] { chara, charb });
+            var lazy = new Lazy(alt, 1);
+
+            var backa = new Character('a', false);
+            var back2a = new List(new IMatch[] { backa, backa }, false);
+            var assert = new Assert(back2a);
+            var list = new List(new IMatch[] { lazy, assert });
+
+            // ((?:a|b)+?(?<=aa))
+            ExecTest(context, list);
+        }
+
+        public static void test_negative_lookbehind()
+        {
+            var context = new Context("abaab");
+            var chara = new Character('a');
+            var charb = new Character('b');
+            var alt = new Alternate(new IMatch[] { chara, charb });
+            var lazy = new Lazy(alt, 1);
+
+            var backa = new Character('a', false);
+            var back2a = new List(new IMatch[] { backa, backa }, false);
+            var assert = new Assert(back2a, false);
+            var list = new List(new IMatch[] { lazy, assert });
+
+            // ((?:a|b)+?(?<!aa))
             ExecTest(context, list);
         }
 
