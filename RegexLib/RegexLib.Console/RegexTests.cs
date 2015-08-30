@@ -27,12 +27,14 @@ namespace RegexLib.Console
 
         static void ExecTest(Context context, IMatch testToken)
         {
-            if(testToken.Match(context))
+            var token = new CaptureGroup(testToken);
+
+            if(token.Match(context))
             {
                 WriteInfo("Match success.");
                 WriteLine(context);
 
-                while (testToken.MatchNext(context))
+                while (token.MatchNext(context))
                 {
                     WriteInfo("MatchNext success.");
                     WriteLine(context);
@@ -179,6 +181,21 @@ namespace RegexLib.Console
 
             // (a|aa){1,2}?
             ExecTest(context, lazy);
+        }
+
+        public static void test_greedyaltcapture()
+        {
+            var context = new Context("aaaaa");
+            var chara = new Character('a');
+            var list2a = new List(new IMatch[] { chara, chara });
+
+            var grp1 = new CaptureGroup(chara, 1);
+            var grp2 = new CaptureGroup(list2a, 2);
+            var alt = new Alternate(new IMatch[] { grp1, grp2 });
+            var greedy = new Greedy(alt, 1, 2);
+
+            // ((a)|(aa)){1,2}
+            ExecTest(context, greedy);
         }
 
         #endregion

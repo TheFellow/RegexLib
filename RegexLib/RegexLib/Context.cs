@@ -41,6 +41,45 @@ namespace RegexLib
 
         #endregion
 
+        #region Sorted dictionary of capture info stacks
+
+        private readonly SortedDictionary<int, Stack<CaptureInfo>> capture = new SortedDictionary<int, Stack<CaptureInfo>>();
+
+        // This is used to "check out" keys for capture groups
+        // Since this is always increasing it will be easy to
+        // restore the state of the context by tracking the
+        // largest key
+        private int key = 0;
+
+        public int Push(int beg, int end, int groupId)
+        {
+            // Ensure there is a stack present for the groupId
+            if (!capture.ContainsKey(groupId))
+                capture[groupId] = new Stack<CaptureInfo>();
+
+            // Create the capture info struct and add it to the stack
+            var info = new CaptureInfo(beg, end, groupId, ++key);
+            capture[groupId].Push(info);
+
+            // Return the new key as a convenience
+            return info.key;
+        }
+
+        public CaptureInfo Peek(int groupId) => capture[groupId].Peek();
+        public CaptureInfo Pop(int groupId) => capture[groupId].Pop();
+
+        public bool GroupHasValue(int groupId) => capture.ContainsKey(groupId) && capture[groupId].Count > 0;
+        public string GroupValue(int groupId)
+        {
+            if (!GroupHasValue(groupId))
+                return string.Empty;
+
+            var ci = Peek(groupId);
+            return matchString.Substring(ci.low, ci.high - ci.low);
+        }
+
+        #endregion
+
         #region Use ToString() to dump the current state of the matching context
 
         public override string ToString()
@@ -54,6 +93,31 @@ namespace RegexLib
                 int[] stackState = stack.ToArray();
                 Array.Reverse(stackState);
                 str += "  Stack: " + string.Join(", ", stackState);
+            }
+
+            // If there are captures display them
+            if(capture.Count > 0)
+            {
+                foreach (int groupId in capture.Keys)
+                {
+                    if (!GroupHasValue(groupId))
+                        continue;
+
+                    var ci = Peek(groupId);
+                    str += $"\n  {(groupId != 0 ? $"Grp {groupId}" : "RegEx")}: Index {ci.beg} - {ci.end} Value: {matchString.Substring(ci.low, ci.high - ci.low)}";
+
+                    // Display extended capture info if the group has matched multiple times
+                    if(capture[groupId].Count > 1)
+                    {
+                        // Display preceding captures in reverse order looking back from current capture
+                        var captures = capture[groupId].ToArray();
+                        for (int i = 1; i < captures.Length; i++)
+                        {
+                            var prev = captures[i];
+                            str += $"\n   Prev: {prev.beg} - {prev.end} Value: {matchString.Substring(prev.low, prev.high - prev.low)}";
+                        }
+                    }
+                }
             }
 
             return str;

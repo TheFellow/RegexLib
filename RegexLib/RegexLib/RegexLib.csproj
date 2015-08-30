@@ -40,8 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CaptureInfo.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="Core\Alternate.cs" />
+    <Compile Include="Core\CaptureGroup.cs" />
     <Compile Include="Core\Character.cs" />
     <Compile Include="Core\Empty.cs" />
     <Compile Include="Core\Greedy.cs" />
