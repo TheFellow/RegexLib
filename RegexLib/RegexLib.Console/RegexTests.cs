@@ -207,7 +207,7 @@ namespace RegexLib.Console
             var chara = new Character('a');
             var greedy = new Greedy(chara, 1);
             var list2a = new List(new IMatch[] { chara, chara });
-            var assert = new Assert(new CaptureGroup(list2a, 1));
+            var assert = new Lookaround(new CaptureGroup(list2a, 1));
             var list = new List(new IMatch[] { greedy, assert });
 
             // (a+(?=(aa))
@@ -220,7 +220,7 @@ namespace RegexLib.Console
             var chara = new Character('a');
             var greedy = new Greedy(chara, 1);
             var list2a = new List(new IMatch[] { chara, chara });
-            var assert = new Assert(new CaptureGroup(list2a, 1), false);
+            var assert = new Lookaround(new CaptureGroup(list2a, 1), false);
             var list = new List(new IMatch[] { greedy, assert });
 
             // (a+(?!(aa))
@@ -237,7 +237,7 @@ namespace RegexLib.Console
 
             var backa = new Character('a', false);
             var back2a = new List(new IMatch[] { backa, backa }, false);
-            var assert = new Assert(back2a);
+            var assert = new Lookaround(back2a);
             var list = new List(new IMatch[] { lazy, assert });
 
             // ((?:a|b)+?(?<=aa))
@@ -254,7 +254,7 @@ namespace RegexLib.Console
 
             var backa = new Character('a', false);
             var back2a = new List(new IMatch[] { backa, backa }, false);
-            var assert = new Assert(back2a, false);
+            var assert = new Lookaround(back2a, false);
             var list = new List(new IMatch[] { lazy, assert });
 
             // ((?:a|b)+?(?<!aa))

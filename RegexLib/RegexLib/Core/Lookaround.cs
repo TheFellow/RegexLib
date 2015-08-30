@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace RegexLib.Core
 {
-    class Assert : MatchSingleBase
+    class Lookaround : MatchSingleBase
     {
         public readonly bool positive;
 
-        public Assert(IMatch matchItem, bool positive = true)
+        public Lookaround(IMatch matchItem, bool positive = true)
             : base(matchItem)
         {
             this.positive = positive;
