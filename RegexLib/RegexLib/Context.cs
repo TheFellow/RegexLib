@@ -91,7 +91,7 @@ namespace RegexLib
         {
             foreach(int groupId in capture.Keys)
             {
-                if (GroupHasValue(groupId) && Peek(groupId).key > maxKey)
+                while (GroupHasValue(groupId) && Peek(groupId).key > maxKey)
                     Pop(groupId);
             }
         }

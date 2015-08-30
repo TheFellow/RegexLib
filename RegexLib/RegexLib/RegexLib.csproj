@@ -53,6 +53,7 @@
     <Compile Include="Core\List.cs" />
     <Compile Include="Core\MatchManyBase.cs" />
     <Compile Include="Core\MatchSingleBase.cs" />
+    <Compile Include="Core\Possessive.cs" />
     <Compile Include="Core\Repeat.cs" />
     <Compile Include="IMatch.cs" />
     <Compile Include="Regex.cs" />

@@ -31,7 +31,8 @@ namespace RegexLib.Console
             //test_negative_lookahead();
             //test_positive_lookbehind();
             //test_negative_lookbehind();
-            test_atomic();
+            //test_atomic();
+            test_possessive();
 
             ReadKey(true);
         }

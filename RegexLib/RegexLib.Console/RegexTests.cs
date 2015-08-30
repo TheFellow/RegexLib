@@ -275,6 +275,19 @@ namespace RegexLib.Console
             ExecTest(context, list);
         }
 
+        public static void test_possessive()
+        {
+            var context = new Context("aaaab");
+            var chara = new Character('a');
+            var charb = new Character('b');
+            var alt = new CaptureGroup(new Alternate(new IMatch[] { chara, charb }), 2);
+            var posa = new Possessive(alt, 2);
+            var list = new List(new IMatch[] { new CaptureGroup(posa, 1), alt });
+
+            // (((a|b){2,}+)(a|b))
+            ExecTest(context, list);
+        }
+
         #endregion
     }
 }
