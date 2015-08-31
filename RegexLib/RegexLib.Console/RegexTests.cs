@@ -336,6 +336,27 @@ namespace RegexLib.Console
             ExecTest(new Context("e"), cset1);  // Yes
         }
 
+        public static void test_negated_nested_charset()
+        {
+            var cset3 = new Charset();
+            cset3.Include('c');
+
+            var cset2 = new Charset();
+            cset2.Include('b', 'd');
+            cset2.Exclude(cset3);
+
+            var cset1 = new Charset(false);
+            cset1.Include('a', 'e');
+            cset1.Exclude(cset2);
+
+            // ([^a-e-[b-d-[c]]])
+            ExecTest(new Context("a"), cset1);  // No
+            ExecTest(new Context("b"), cset1);  // Yes
+            ExecTest(new Context("c"), cset1);  // No
+            ExecTest(new Context("d"), cset1);  // Yes
+            ExecTest(new Context("e"), cset1);  // No
+        }
+
         #endregion
     }
 }

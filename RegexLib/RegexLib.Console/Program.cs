@@ -35,7 +35,8 @@ namespace RegexLib.Console
             //test_possessive();
             //test_backref();
             //test_charset();
-            test_nested_charset();
+            //test_nested_charset();
+            test_negated_nested_charset();
 
             ReadKey(true);
         }
