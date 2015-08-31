@@ -288,6 +288,19 @@ namespace RegexLib.Console
             ExecTest(context, list);
         }
 
+        public static void test_backref()
+        {
+            var context = new Context("aaaaab");
+            var chara = new Character('a');
+            var lazya = new Lazy(chara, 1);
+            var cap1 = new CaptureGroup(lazya, 1);
+            var back1 = new Backreference(cap1);
+            var list = new List(new IMatch[] { cap1, back1 });
+
+            // ((a+?)\1)
+            ExecTest(context, list);
+        }
+
         #endregion
     }
 }

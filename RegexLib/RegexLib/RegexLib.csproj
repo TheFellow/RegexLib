@@ -44,6 +44,7 @@
     <Compile Include="Context.cs" />
     <Compile Include="Core\Alternate.cs" />
     <Compile Include="Core\Atomic.cs" />
+    <Compile Include="Core\Backreference.cs" />
     <Compile Include="Core\Lookaround.cs" />
     <Compile Include="Core\CaptureGroup.cs" />
     <Compile Include="Core\Character.cs" />
