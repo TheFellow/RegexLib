@@ -9,9 +9,9 @@ namespace RegexLib.Core
     /// <summary>
     /// The Empty token is a zero-width token which will always match, but has not alternatives
     /// </summary>
-    class Empty : IMatch
+    class Empty : MatchBase
     {
-        public bool Match(Context context) => true;
-        public bool MatchNext(Context context) => false;
+        public override bool Match(Context context) => true;
+        public override bool MatchNext(Context context) => false;
     }
 }

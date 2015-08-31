@@ -9,7 +9,7 @@ namespace RegexLib.Core
     /// <summary>
     /// Abstract base class for all token types which operate on multiple tokens
     /// </summary>
-    abstract class MatchManyBase : IMatch
+    abstract class MatchManyBase : MatchBase
     {
         /// <summary>
         /// List of tokens
@@ -17,6 +17,7 @@ namespace RegexLib.Core
         public readonly IMatch[] matchList;
 
         public MatchManyBase(IMatch[] matchList)
+            : base()
         {
             this.matchList = matchList;
         }
@@ -25,8 +26,5 @@ namespace RegexLib.Core
         /// Length of the list of tokens
         /// </summary>
         public int Length => matchList.Length;
-
-        public abstract bool Match(Context context);
-        public abstract bool MatchNext(Context context);
     }
 }

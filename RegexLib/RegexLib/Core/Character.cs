@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RegexLib.Core
 {
-    class Character : IMatch
+    class Character : MatchBase
     {
         /// <summary>
         /// The character we're trying to match
@@ -29,7 +29,7 @@ namespace RegexLib.Core
             this.forward = forward;
         }
 
-        public bool Match(Context context)
+        public override bool Match(Context context)
         {
             // We have no chance of matching if we're not on a valid index
             if (forward)
@@ -51,7 +51,7 @@ namespace RegexLib.Core
             return result;
         }
 
-        public bool MatchNext(Context context)
+        public override bool MatchNext(Context context)
         {
             // There are no alternatives we can try, so backtrack our offset and fail
             context.offset -= step;

@@ -6,18 +6,19 @@ using System.Threading.Tasks;
 
 namespace RegexLib.Core
 {
-    class Backreference : IMatch
+    class Backreference : MatchBase
     {
         public readonly CaptureGroup captureGroup;
 
         public int groupId => captureGroup.groupId;
 
         public Backreference(CaptureGroup captureGroup)
+            : base()
         {
             this.captureGroup = captureGroup;
         }
 
-        public bool Match(Context context)
+        public override bool Match(Context context)
         {
             if (!context.GroupHasValue(groupId))
                 return false;
@@ -41,7 +42,7 @@ namespace RegexLib.Core
             return true;
         }
 
-        public bool MatchNext(Context context)
+        public override bool MatchNext(Context context)
         {
             // Restore the previous offset
             int offset = context.Pop();

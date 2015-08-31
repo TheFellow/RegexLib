@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="RegexLib.Context">
+    <Position X="16.25" Y="1.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AACgEAAAAAAEAAQEAEBEAABAAACAEMAAAABAQAAACBA=</HashCode>
+      <FileName>Context.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegexLib.Regex" Collapsed="true">
+    <Position X="14" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Regex.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegexLib.Core.Alternate" Collapsed="true">
+    <Position X="2.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAQAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Core\Alternate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegexLib.Core.Atomic" Collapsed="true">
+    <Position X="5.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Core\Atomic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegexLib.Core.Backreference" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAABAAAAAAAAAAAAACAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Core\Backreference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegexLib.Core.CaptureGroup" Collapsed="true">
+    <Position X="14.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAABAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Core\CaptureGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegexLib.Core.Character" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAQAAAAAAAAAAAAAAAgAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Core\Character.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegexLib.Core.Charset" Collapsed="true">
+    <Position X="9.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgCAQAIAAAAAAIAACAAAAAAggAAAAEAAAAAQAAA=</HashCode>
+      <FileName>Core\Charset.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RegexLib.Core.Empty" Collapsed="true">
+    <Position X="1.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Core\Empty.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegexLib.Core.Greedy" Collapsed="true">
+    <Position X="9.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEgAAAAAAAAAAAAAAABAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Core\Greedy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegexLib.Core.Lazy" Collapsed="true">
+    <Position X="12" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEgAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Core\Lazy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegexLib.Core.List" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAQAAAAAgAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Core\List.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegexLib.Core.Lookaround" Collapsed="true">
+    <Position X="7.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgCAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Core\Lookaround.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegexLib.Core.MatchBase" Collapsed="true">
+    <Position X="5.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Core\MatchBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RegexLib.Core.MatchManyBase" Collapsed="true">
+    <Position X="1.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\MatchManyBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegexLib.Core.MatchSingleBase" Collapsed="true">
+    <Position X="9.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\MatchSingleBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegexLib.Core.Possessive" Collapsed="true">
+    <Position X="9.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Core\Possessive.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RegexLib.Core.Repeat" Collapsed="true">
+    <Position X="11" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAQAAAAAAAAAQQAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Core\Repeat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="RegexLib.CaptureInfo">
+    <Position X="14.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAABAAAAAAECgIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CaptureInfo.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="RegexLib.Core.CharRange" BaseTypeListCollapsed="true">
+    <Position X="11.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAIAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Core\Charset.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Struct>
+  <Interface Name="RegexLib.IMatch">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>IMatch.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RegexLib.Core.IContains">
+    <Position X="11.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Core\Charset.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -53,6 +53,7 @@
     <Compile Include="Core\Greedy.cs" />
     <Compile Include="Core\Lazy.cs" />
     <Compile Include="Core\List.cs" />
+    <Compile Include="Core\MatchBase.cs" />
     <Compile Include="Core\MatchManyBase.cs" />
     <Compile Include="Core\MatchSingleBase.cs" />
     <Compile Include="Core\Possessive.cs" />
@@ -61,7 +62,9 @@
     <Compile Include="Regex.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Diagrams\Core-Diagram.cd" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

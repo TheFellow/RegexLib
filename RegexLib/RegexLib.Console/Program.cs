@@ -26,7 +26,7 @@ namespace RegexLib.Console
             //test_lazy();
             //test_greedyalternate();
             //test_lazyalternate();
-            //test_greedyaltcapture();
+            test_greedyaltcapture();
             //test_assertion();
             //test_negative_lookahead();
             //test_positive_lookbehind();
@@ -36,7 +36,7 @@ namespace RegexLib.Console
             //test_backref();
             //test_charset();
             //test_nested_charset();
-            test_negated_nested_charset();
+            //test_negated_nested_charset();
 
             ReadKey(true);
         }

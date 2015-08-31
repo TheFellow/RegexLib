@@ -17,13 +17,14 @@ namespace RegexLib.Core
         public bool Contains(char c) => c >= low && c <= high;
     }
 
-    class Charset : IMatch, IContains
+    class Charset : MatchBase, IContains
     {
         public bool positive, forward;
 
         private int step => forward ? 1 : -1;
 
         public Charset(bool positive = true, bool forward = true)
+            : base()
         {
             this.positive = positive;
             this.forward = forward;
@@ -34,9 +35,9 @@ namespace RegexLib.Core
         private readonly List<IContains> inclusions = new List<IContains>();    // The set of inclusions
         private readonly List<IContains> exclusions = new List<IContains>();    // The set of exclusions
 
-        #region IMatch
+        #region IMatch via MatchBase
 
-        public bool Match(Context context)
+        public override bool Match(Context context)
         {
             // We have no chance of matching if we're not on a valid index
             if (forward)
@@ -60,7 +61,7 @@ namespace RegexLib.Core
             return result;
         }
 
-        public bool MatchNext(Context context)
+        public override bool MatchNext(Context context)
         {
             // No alternatives, backtrack the offset and fail
             context.offset -= step;
