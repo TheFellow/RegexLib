@@ -301,6 +301,41 @@ namespace RegexLib.Console
             ExecTest(context, list);
         }
 
+        public static void test_charset()
+        {
+            var context = new Context("a1b2c3d4e5f6");
+            var cset = new Charset();
+            cset.Include('a');
+            cset.Include('b', 'e');
+            cset.Include('0', '9');
+
+            var pos = new Possessive(cset, 0);
+
+            // ([ab-e0-9]*)
+            ExecTest(context, pos);
+        }
+
+        public static void test_nested_charset()
+        {
+            var cset3 = new Charset();
+            cset3.Include('c');
+
+            var cset2 = new Charset();
+            cset2.Include('b', 'd');
+            cset2.Exclude(cset3);
+
+            var cset1 = new Charset();
+            cset1.Include('a', 'e');
+            cset1.Exclude(cset2);
+
+            // ([a-e-[b-d-[c]]])
+            ExecTest(new Context("a"), cset1);  // Yes
+            ExecTest(new Context("b"), cset1);  // No
+            ExecTest(new Context("c"), cset1);  // Yes
+            ExecTest(new Context("d"), cset1);  // No
+            ExecTest(new Context("e"), cset1);  // Yes
+        }
+
         #endregion
     }
 }
