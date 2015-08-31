@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1">
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
   <Class Name="RegexLib.Context">
-    <Position X="16.25" Y="1.25" Width="2" />
+    <Position X="16.25" Y="1" Width="3" />
     <TypeIdentifier>
       <HashCode>AACgEAAAAAAEAAQEAEBEAABAAACAEMAAAABAQAAACBA=</HashCode>
       <FileName>Context.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RegexLib.Regex" Collapsed="true">
-    <Position X="14" Y="1.25" Width="1.5" />
+    <Position X="14" Y="1" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Regex.cs</FileName>
@@ -136,7 +136,7 @@
     </TypeIdentifier>
   </Struct>
   <Struct Name="RegexLib.Core.CharRange" BaseTypeListCollapsed="true">
-    <Position X="11.75" Y="2.5" Width="1.5" />
+    <Position X="11.75" Y="2.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAACAIAAAAAAAAAAAAAAAAQAAA=</HashCode>
       <FileName>Core\Charset.cs</FileName>
@@ -144,14 +144,14 @@
     <Lollipop Position="0.2" />
   </Struct>
   <Interface Name="RegexLib.IMatch">
-    <Position X="4" Y="0.5" Width="1.5" />
+    <Position X="3.25" Y="0.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
       <FileName>IMatch.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="RegexLib.Core.IContains">
-    <Position X="11.75" Y="1" Width="1.5" />
+    <Position X="11.75" Y="1" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
       <FileName>Core\Charset.cs</FileName>
