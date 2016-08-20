@@ -32,7 +32,7 @@ namespace RegexLib.Core
             // Try to match the token
             bool result = matchItem.Match(context);
 
-            // Negative assertions return the oposite of the actual token result
+            // Negative assertions return the opposite of the actual token result
             if (!positive)
                 result = !result;
 

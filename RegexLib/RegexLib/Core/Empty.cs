@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace RegexLib.Core
 {
     /// <summary>
-    /// The Empty token is a zero-width token which will always match, but has not alternatives
+    /// The Empty token is a zero-width token which will always match, but has no alternatives
     /// </summary>
     class Empty : MatchBase
     {
